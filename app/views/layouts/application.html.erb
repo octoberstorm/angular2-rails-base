@@ -3,12 +3,16 @@
   <head>
     <title>Angular2Blog</title>
     <%= csrf_meta_tags %>
-
+    <base href="/">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <app-root></app-root>
     <%= yield %>
+    <%= javascript_include_tag webpack_js_path("polyfills.js") %>
+    <%= javascript_include_tag webpack_js_path("vendor.js") %>
+    <%= javascript_include_tag webpack_js_path("app.js") %>
   </body>
 </html>
